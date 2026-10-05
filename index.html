@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Guggu ❤️</title>
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+body{
+  background:#08060b;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+.screen{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+  position:relative;
+}
+.screen.active{
+  display:flex;
+}
+.content{
+  width:100%;
+  max-width:500px;
+  animation:fade 1s ease;
+}
+h1{
+  font-size:clamp(32px,9vw,58px);
+  margin-bottom:15px;
+}
+h2{
+  font-size:30px;
+  margin-bottom:15px;
+}
+p{
+  color:#d9d2dc;
+  line-height:1.7;
+  font-size:16px;
+}
+button{
+  border:none;
+  padding:14px 25px;
+  border-radius:30px;
+  margin-top:25px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  background:#ff4f91;
+  color:white;
+  box-shadow:0 0 25px rgba(255,79,145,.35);
+}
+button:active{
+  transform:scale(.95);
+}
+.small{
+  font-size:13px;
+  color:#aaa;
+}
+.heart{
+  position:fixed;
+  bottom:-30px;
+  font-size:22px;
+  animation:float 5s linear forwards;
+  pointer-events:none;
+}
+@keyframes float{
+  from{
+    transform:translateY(0) rotate(0deg);
+    opacity:1;
+  }
+  to{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+@keyframes fade{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  padding:22px;
+  border-radius:22px;
+  margin-top:18px;
+  backdrop-filter:blur(10px);
+}
+.option{
+  width:100%;
+  margin:8px 0;
+  background:#17121b;
+  border:1px solid #302632;
+}
+.option:hover{
+  background:#241824;
+}
+.progress{
+  height:5px;
+  width:100%;
+  background:#222;
+  border-radius:10px;
+  margin:20px 0;
+}
+.progressBar{
+  height:100%;
+  width:0%;
+  background:#ff4f91;
+  border-radius:10px;
+  transition:.4s;
+}
+#letter{
+  text-align:left;
+  white-space:pre-line;
+}
+.bigHeart{
+  font-size:80px;
+  animation:pulse 1.2s infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+.glow{
+  color:#ff76a9;
+  text-shadow:0 0 20px #ff2f7d;
+}
+</style>
+</head>
+<body>
+<!-- SCREEN 1 -->
+<section class="screen active" id="screen1">
+  <div class="content">
+    <div class="bigHeart">❤️</div>
+    <p class="small">A VERY IMPORTANT MESSAGE</p>
+    <h1 class="glow">ACCESS GRANTED</h1>
+    <p>
+      Someone very special has a birthday today.
+      <br><br>
+      And this little place exists only for her.
+    </p>
+    <button onclick="startExperience()">ENTER ❤️</button>
+  </div>
+</section>
+<!-- SCREEN 2 -->
+<section class="screen" id="screen2">
+  <div class="content">
+    <p class="small">07 • 10 • 2026</p>
+    <h1>HAPPY<br><span class="glow">BIRTHDAY</span></h1>
+    <h2>MY GUGGU 🎀</h2>
+    <p>
+      Before you open anything else...
+      <br>
+      I just want you to know that today isn't
+      just another day for me.
+    </p>
+    <button onclick="showScreen(3)">CONTINUE →</button>
+  </div>
+</section>
+<!-- SCREEN 3 -->
+<section class="screen" id="screen3">
+  <div class="content">
+    <h2>Choose your first surprise 👀</h2>
+    <button class="option" onclick="memory()">📸 A Memory</button>
+    <button class="option" onclick="secret()">💌 A Secret</button>
+    <button class="option" onclick="quiz()">🧠 Test Me</button>
+    <button class="option" onclick="letter()">🫶🏻 What I Never Say</button>
+    <button
+      style="background:#211820"
+      onclick="showScreen(7)">
+      🎁 Final Surprise
+    </button>
+  </div>
+</section>
+<!-- MEMORY -->
+<section class="screen" id="screen4">
+  <div class="content">
+    <p class="small">MEMORY UNLOCKED</p>
+    <h2>Remember this? 🥹</h2>
+    <div class="card">
+      <!-- PHOTO PLACEHOLDER -->
+      <div style="
+        height:240px;
+        border-radius:18px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#17121b;
+        color:#888;">
+        YOUR PHOTO HERE 📸
+      </div>
+      <p style="margin-top:18px;">
+        Every memory with you somehow becomes
+        one of my favourite memories.
+      </p>
+    </div>
+    <button onclick="showScreen(3)">← BACK</button>
+  </div>
+</section>
+<!-- SECRET -->
+<section class="screen" id="screen5">
+  <div class="content">
+    <p class="small">CLASSIFIED 💌</p>
+    <h2>One little secret...</h2>
+    <div class="card">
+      <p>
+        I don't think you realise how much space
+        you've taken up in my life.
+        <br><br>
+        Somewhere between our random conversations,
+        fights, laughs and stupid moments...
+        you became my favourite person.
+      </p>
+    </div>
+    <button onclick="showScreen(3)">KEEP THIS SECRET 🤫</button>
+  </div>
+</section>
+<!-- QUIZ -->
+<section class="screen" id="screen6">
+  <div class="content">
+    <p class="small">GUGGU TEST 🧠❤️</p>
+    <h2 id="question">Question</h2>
+    <div class="progress">
+      <div class="progressBar" id="progressBar"></div>
+    </div>
+    <div id="answers"></div>
+    <p id="quizResult"></p>
+  </div>
+</section>
+<!-- LETTER -->
+<section class="screen" id="screen8">
+  <div class="content">
+    <p class="small">FROM ME TO YOU</p>
+    <h2>Things I don't say enough...</h2>
+    <div class="card">
+      <p id="letter">
+Guggu,
+I don't know if words will ever be enough
+to explain what you mean to me.
+But today, on your birthday,
+I just want you to know that I'm genuinely
+grateful that you came into my life.
+You aren't just another person I met.
+You're someone whose smile can change
+the entire mood of my day.
+And even though we're far away from each other,
+there are moments when you somehow feel
+closer than anyone else.
+I hope this birthday brings you the same
+kind of happiness that you have brought into my life.
+Happy Birthday, my Guggu. ❤️
+And yes...
+I'm still choosing you.
+      </p>
+    </div>
+    <button onclick="showScreen(3)">← BACK</button>
+  </div>
+</section>
+<!-- FINAL -->
+<section class="screen" id="screen7">
+  <div class="content">
+    <div class="bigHeart">❤️</div>
+    <p class="small">FINAL MESSAGE</p>
+    <h1 class="glow">HAPPY BIRTHDAY</h1>
+    <h2>MY GUGGU 🎀</h2>
+    <div class="card">
+      <p>
+        1700 KM APART.
+        <br><br>
+        But somehow...
+        <br>
+        you still manage to be
+        one of the closest people to my heart.
+        <br><br>
+        Today is your day.
+        <br>
+        Smile a little more.
+        Laugh a little louder.
+        And remember...
+        <br><br>
+        <b>You are loved. ❤️</b>
+      </p>
+    </div>
+    <p style="margin-top:20px">
+      — SUJAL ❤️
+    </p>
+  </div>
+</section>
+<script>
+let currentScreen = 1;
+function showScreen(number){
+  document.querySelectorAll(".screen").forEach(screen=>{
+    screen.classList.remove("active");
+  });
+  document.getElementById("screen"+number).classList.add("active");
+  currentScreen = number;
+  window.scrollTo(0,0);
+  if(number === 7){
+    createHearts();
+  }
+}
+function startExperience(){
+  showScreen(2);
+  setInterval(createHeart,700);
+}
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className="heart";
+  const hearts=["❤️","💕","💗","💖","💘"];
+  heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(4+Math.random()*3)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>{
+    heart.remove();
+  },7000);
+}
+function createHearts(){
+  for(let i=0;i<20;i++){
+    setTimeout(()=>{
+      createHeart();
+    },i*150);
+  }
+}
+function memory(){
+  showScreen(4);
+}
+function secret(){
+  showScreen(5);
+}
+function letter(){
+  showScreen(8);
+}
+const questions=[
+{
+  q:"Who is the birthday girl? 👀",
+  a:["Guggu 🎀","Someone else","My neighbour","Nobody"],
+  correct:0
+},
+{
+  q:"Who is writing this entire thing?",
+  a:["Sujal ❤️","Google","Her cat","NASA"],
+  correct:0
+},
+{
+  q:"What's more important today?",
+  a:["Her happiness ❤️","Homework","Sleep","Nothing"],
+  correct:0
+},
+{
+  q:"What do I want most today?",
+  a:["To see her smile 🥹","A new phone","Pizza","Money"],
+  correct:0
+},
+{
+  q:"Final question...",
+  a:["Will you keep being my Guggu? ❤️","No","Maybe","Ask later"],
+  correct:0
+}
+];
+let questionIndex=0;
+let score=0;
+function quiz(){
+  questionIndex=0;
+  score=0;
+  showScreen(6);
+  loadQuestion();
+}
+function loadQuestion(){
+  if(questionIndex >= questions.length){
+    document.getElementById("question").innerHTML=
+      "QUIZ COMPLETE ❤️";
+    document.getElementById("answers").innerHTML=
+      `<div class="card">
+        <h2>${score}/${questions.length}</h2>
+        <p>
+        Congratulations Guggu 😂❤️
+        <br><br>
+        You have officially unlocked
+        the birthday experience.
+        </p>
+      </div>
+      <button onclick="showScreen(3)">CONTINUE →</button>`;
+    document.getElementById("progressBar").style.width="100%";
+    return;
+  }
+  const q=questions[questionIndex];
+  document.getElementById("question").innerText=q.q;
+  document.getElementById("quizResult").innerText="";
+  document.getElementById("progressBar").style.width=
+    ((questionIndex)/questions.length*100)+"%";
+  const answers=document.getElementById("answers");
+  answers.innerHTML="";
+  q.a.forEach((answer,index)=>{
+    const btn=document.createElement("button");
+    btn.className="option";
+    btn.innerText=answer;
+    btn.onclick=()=>{
+      if(index===q.correct){
+        score++;
+        document.getElementById("quizResult").innerText=
+          "Correct 😭❤️";
+      }else{
+        document.getElementById("quizResult").innerText=
+          "Wrong 😂 but I'll forgive you.";
+      }
+      questionIndex++;
+      setTimeout(loadQuestion,700);
+    };
+    answers.appendChild(btn);
+  });
+}
+</script>
+</body>
+</html>
