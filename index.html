@@ -3,427 +3,978 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Guggu ❤️</title>
+
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-  background:#08060b;
-  color:white;
-  font-family:Arial, sans-serif;
-  overflow-x:hidden;
+    background:#070509;
+    color:white;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    overflow-x:hidden;
 }
+
+/* ---------------- SCREEN ---------------- */
+
 .screen{
-  min-height:100vh;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:25px;
-  position:relative;
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:28px 20px;
+    position:relative;
 }
+
 .screen.active{
-  display:flex;
+    display:flex;
 }
+
 .content{
-  width:100%;
-  max-width:500px;
-  animation:fade 1s ease;
+    width:100%;
+    max-width:500px;
+    animation:fadeIn .9s ease;
 }
+
+/* ---------------- TEXT ---------------- */
+
 h1{
-  font-size:clamp(32px,9vw,58px);
-  margin-bottom:15px;
+    font-size:clamp(40px,11vw,65px);
+    line-height:1.03;
+    margin-bottom:18px;
+    letter-spacing:-1px;
 }
+
 h2{
-  font-size:30px;
-  margin-bottom:15px;
+    font-size:30px;
+    margin-bottom:17px;
 }
+
 p{
-  color:#d9d2dc;
-  line-height:1.7;
-  font-size:16px;
+    color:#ded7df;
+    font-size:16px;
+    line-height:1.75;
 }
-button{
-  border:none;
-  padding:14px 25px;
-  border-radius:30px;
-  margin-top:25px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  background:#ff4f91;
-  color:white;
-  box-shadow:0 0 25px rgba(255,79,145,.35);
-}
-button:active{
-  transform:scale(.95);
-}
+
 .small{
-  font-size:13px;
-  color:#aaa;
+    color:#96909a;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:17px;
 }
-.heart{
-  position:fixed;
-  bottom:-30px;
-  font-size:22px;
-  animation:float 5s linear forwards;
-  pointer-events:none;
-}
-@keyframes float{
-  from{
-    transform:translateY(0) rotate(0deg);
-    opacity:1;
-  }
-  to{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
-}
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-.card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
-  padding:22px;
-  border-radius:22px;
-  margin-top:18px;
-  backdrop-filter:blur(10px);
-}
-.option{
-  width:100%;
-  margin:8px 0;
-  background:#17121b;
-  border:1px solid #302632;
-}
-.option:hover{
-  background:#241824;
-}
-.progress{
-  height:5px;
-  width:100%;
-  background:#222;
-  border-radius:10px;
-  margin:20px 0;
-}
-.progressBar{
-  height:100%;
-  width:0%;
-  background:#ff4f91;
-  border-radius:10px;
-  transition:.4s;
-}
-#letter{
-  text-align:left;
-  white-space:pre-line;
-}
-.bigHeart{
-  font-size:80px;
-  animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-}
+
 .glow{
-  color:#ff76a9;
-  text-shadow:0 0 20px #ff2f7d;
+    color:#ff73a8;
+    text-shadow:
+        0 0 10px rgba(255,70,140,.5),
+        0 0 30px rgba(255,70,140,.35);
 }
+
+/* ---------------- HEART ---------------- */
+
+.bigHeart{
+    font-size:78px;
+    margin-bottom:18px;
+    animation:pulse 1.3s infinite;
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button{
+    border:none;
+    outline:none;
+    padding:15px 28px;
+    border-radius:35px;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+    color:white;
+    background:#ff4f91;
+    cursor:pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,79,145,.3),
+        0 0 35px rgba(255,79,145,.15);
+
+    transition:.2s;
+}
+
+button:active{
+    transform:scale(.93);
+}
+
+.menu{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:25px;
+}
+
+.menu button{
+    width:100%;
+    margin-top:0;
+    background:#151016;
+    border:1px solid #302731;
+    box-shadow:none;
+    padding:17px;
+}
+
+.menu button:hover{
+    background:#211821;
+}
+
+/* ---------------- CARD ---------------- */
+
+.card{
+    width:100%;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:24px;
+    padding:20px;
+    margin-top:20px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+/* ---------------- PHOTO ---------------- */
+
+.memoryPhoto{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+/* ---------------- VIDEO ---------------- */
+
+.memoryVideo{
+    width:100%;
+    display:block;
+    border-radius:18px;
+    margin-top:18px;
+    background:#000;
+}
+
+/* ---------------- LETTER ---------------- */
+
+#letter{
+    text-align:left;
+    white-space:pre-line;
+}
+
+/* ---------------- MUSIC BUTTON ---------------- */
+
+.musicButton{
+    position:fixed;
+    top:18px;
+    right:18px;
+
+    width:48px;
+    height:48px;
+
+    padding:0;
+    margin:0;
+
+    border-radius:50%;
+
+    background:#17121b;
+    border:1px solid #39303d;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.35);
+
+    z-index:999;
+}
+
+/* ---------------- FLOATING HEARTS ---------------- */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    animation:floatUp 5s linear forwards;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.14);
+    }
+
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- ================= MUSIC ================= -->
+
+<audio id="music" loop>
+
+    <source
+        src="Churai Janda Eh Ringtone Zedge.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+    class="musicButton"
+    id="musicBtn"
+    onclick="toggleMusic()">
+
+    🔇
+
+</button>
+
+
+
+<!-- ================================================= -->
 <!-- SCREEN 1 -->
-<section class="screen active" id="screen1">
-  <div class="content">
-    <div class="bigHeart">❤️</div>
-    <p class="small">A VERY IMPORTANT MESSAGE</p>
-    <h1 class="glow">ACCESS GRANTED</h1>
-    <p>
-      Someone very special has a birthday today.
-      <br><br>
-      And this little place exists only for her.
-    </p>
-    <button onclick="startExperience()">ENTER ❤️</button>
-  </div>
+<!-- ================================================= -->
+
+<section
+    class="screen active"
+    id="screen1">
+
+    <div class="content">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <p class="small">
+            A VERY IMPORTANT MESSAGE
+        </p>
+
+        <h1 class="glow">
+            ACCESS<br>
+            GRANTED
+        </h1>
+
+        <p>
+
+            Someone very special
+            has a birthday today.
+
+            <br><br>
+
+            And this little place
+            exists only for her.
+
+        </p>
+
+        <button onclick="startExperience()">
+
+            ENTER ❤️
+
+        </button>
+
+    </div>
+
 </section>
+
+
+
+<!-- ================================================= -->
 <!-- SCREEN 2 -->
-<section class="screen" id="screen2">
-  <div class="content">
-    <p class="small">07 • 10 • 2026</p>
-    <h1>HAPPY<br><span class="glow">BIRTHDAY</span></h1>
-    <h2>MY GUGGU 🎀</h2>
-    <p>
-      Before you open anything else...
-      <br>
-      I just want you to know that today isn't
-      just another day for me.
-    </p>
-    <button onclick="showScreen(3)">CONTINUE →</button>
-  </div>
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen2">
+
+    <div class="content">
+
+        <p class="small">
+            07 • 10 • 2026
+        </p>
+
+        <h1>
+
+            HAPPY<br>
+
+            <span class="glow">
+                BIRTHDAY
+            </span>
+
+        </h1>
+
+        <h2>
+            MY GUGGU 🎀
+        </h2>
+
+        <p>
+
+            Today isn't just
+            another day.
+
+            <br><br>
+
+            Today is the day
+            my favourite person
+            came into this world.
+
+        </p>
+
+        <button onclick="showScreen(3)">
+
+            CONTINUE →
+
+        </button>
+
+    </div>
+
 </section>
+
+
+
+<!-- ================================================= -->
 <!-- SCREEN 3 -->
-<section class="screen" id="screen3">
-  <div class="content">
-    <h2>Choose your first surprise 👀</h2>
-    <button class="option" onclick="memory()">📸 A Memory</button>
-    <button class="option" onclick="secret()">💌 A Secret</button>
-    <button class="option" onclick="quiz()">🧠 Test Me</button>
-    <button class="option" onclick="letter()">🫶🏻 What I Never Say</button>
-    <button
-      style="background:#211820"
-      onclick="showScreen(7)">
-      🎁 Final Surprise
-    </button>
-  </div>
+<!-- MAIN MENU -->
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen3">
+
+    <div class="content">
+
+        <p class="small">
+            WELCOME TO YOUR LITTLE WORLD
+        </p>
+
+        <h2>
+            Something for you ❤️
+        </h2>
+
+        <p>
+
+            I kept a few things here
+            that I wanted you to see.
+
+        </p>
+
+
+        <div class="menu">
+
+            <button onclick="showScreen(4)">
+
+                📸 A Memory
+
+            </button>
+
+
+            <button onclick="showScreen(5)">
+
+                💌 A Secret
+
+            </button>
+
+
+            <button onclick="showScreen(6)">
+
+                🫶🏻 What I Never Say
+
+            </button>
+
+
+            <button onclick="showScreen(7)">
+
+                🎁 Final Surprise
+
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+
+<!-- ================================================= -->
+<!-- SCREEN 4 -->
 <!-- MEMORY -->
-<section class="screen" id="screen4">
-  <div class="content">
-    <p class="small">MEMORY UNLOCKED</p>
-    <h2>Remember this? 🥹</h2>
-    <div class="card">
-      <!-- PHOTO PLACEHOLDER -->
-      <div style="
-        height:240px;
-        border-radius:18px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        background:#17121b;
-        color:#888;">
-        YOUR PHOTO HERE 📸
-      </div>
-      <p style="margin-top:18px;">
-        Every memory with you somehow becomes
-        one of my favourite memories.
-      </p>
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen4">
+
+    <div class="content">
+
+        <p class="small">
+            A MEMORY I WANT TO KEEP FOREVER
+        </p>
+
+        <h2>
+            Us. ❤️
+        </h2>
+
+
+        <div class="card">
+
+
+            <!-- PHOTO -->
+
+            <img
+                src="D005B313-A663-4066-A7D9-F4103101CA55.JPG"
+                class="memoryPhoto"
+                alt="Our Memory">
+
+
+            <p>
+
+                Some pictures
+                are just pictures.
+
+                <br><br>
+
+                But some pictures
+                carry an entire feeling.
+
+            </p>
+
+
+            <!-- VIDEO -->
+
+            <video
+                class="memoryVideo"
+                controls
+                playsinline
+                preload="metadata">
+
+                <source
+                    src="copy_26798D96-7C48-40B7-9968-0A2F6D92BA1C.MOV"
+                    type="video/quicktime">
+
+                Your browser does not support
+                this video.
+
+            </video>
+
+
+            <p style="margin-top:20px;">
+
+                And this one...
+
+                <br>
+
+                I'll probably never
+                get tired of watching it.
+
+            </p>
+
+        </div>
+
+
+        <button onclick="showScreen(3)">
+
+            ← BACK
+
+        </button>
+
     </div>
-    <button onclick="showScreen(3)">← BACK</button>
-  </div>
+
 </section>
+
+
+
+<!-- ================================================= -->
+<!-- SCREEN 5 -->
 <!-- SECRET -->
-<section class="screen" id="screen5">
-  <div class="content">
-    <p class="small">CLASSIFIED 💌</p>
-    <h2>One little secret...</h2>
-    <div class="card">
-      <p>
-        I don't think you realise how much space
-        you've taken up in my life.
-        <br><br>
-        Somewhere between our random conversations,
-        fights, laughs and stupid moments...
-        you became my favourite person.
-      </p>
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen5">
+
+    <div class="content">
+
+        <p class="small">
+            CLASSIFIED MESSAGE 🔐
+        </p>
+
+        <h2>
+            One little secret...
+        </h2>
+
+
+        <div class="card">
+
+            <p>
+
+                You know what
+                the funniest thing is?
+
+                <br><br>
+
+                I never planned for you
+                to become such an important
+                part of my life.
+
+                <br><br>
+
+                It just happened.
+
+                <br><br>
+
+                And honestly...
+
+                <br>
+
+                I'm really glad it did. ❤️
+
+            </p>
+
+        </div>
+
+
+        <button onclick="showScreen(3)">
+
+            KEEP THIS SECRET 🤫
+
+        </button>
+
     </div>
-    <button onclick="showScreen(3)">KEEP THIS SECRET 🤫</button>
-  </div>
+
 </section>
-<!-- QUIZ -->
-<section class="screen" id="screen6">
-  <div class="content">
-    <p class="small">GUGGU TEST 🧠❤️</p>
-    <h2 id="question">Question</h2>
-    <div class="progress">
-      <div class="progressBar" id="progressBar"></div>
-    </div>
-    <div id="answers"></div>
-    <p id="quizResult"></p>
-  </div>
-</section>
+
+
+
+<!-- ================================================= -->
+<!-- SCREEN 6 -->
 <!-- LETTER -->
-<section class="screen" id="screen8">
-  <div class="content">
-    <p class="small">FROM ME TO YOU</p>
-    <h2>Things I don't say enough...</h2>
-    <div class="card">
-      <p id="letter">
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen6">
+
+    <div class="content">
+
+        <p class="small">
+            FROM ME TO YOU
+        </p>
+
+        <h2>
+            Things I Never Say Enough...
+        </h2>
+
+
+        <div class="card">
+
+            <p id="letter">
+
 Guggu,
+
 I don't know if words will ever be enough
 to explain what you mean to me.
+
 But today, on your birthday,
-I just want you to know that I'm genuinely
-grateful that you came into my life.
-You aren't just another person I met.
-You're someone whose smile can change
-the entire mood of my day.
-And even though we're far away from each other,
-there are moments when you somehow feel
-closer than anyone else.
-I hope this birthday brings you the same
-kind of happiness that you have brought into my life.
+I just want you to know
+how genuinely grateful I am
+that you came into my life.
+
+You're not just someone I talk to.
+
+You're someone whose smile
+can change my entire mood.
+
+Someone I can miss even after
+just talking to you.
+
+Someone who can make
+an ordinary day feel completely different.
+
+And even though we're far away
+from each other,
+
+I still feel lucky that somehow,
+in this huge world,
+I found you.
+
+I hope this birthday gives you
+a hundred reasons to smile.
+
+And whenever life gets difficult,
+I hope you remember that somewhere,
+1700 KM away,
+
+there's someone who cares about you
+more than he sometimes knows
+how to say.
+
 Happy Birthday, my Guggu. ❤️
-And yes...
-I'm still choosing you.
-      </p>
+
+Keep smiling.
+
+Keep being you.
+
+And please never forget...
+
+You are extremely special to me.
+
+            </p>
+
+        </div>
+
+
+        <button onclick="showScreen(3)">
+
+            ← BACK
+
+        </button>
+
     </div>
-    <button onclick="showScreen(3)">← BACK</button>
-  </div>
+
 </section>
+
+
+
+<!-- ================================================= -->
+<!-- SCREEN 7 -->
 <!-- FINAL -->
-<section class="screen" id="screen7">
-  <div class="content">
-    <div class="bigHeart">❤️</div>
-    <p class="small">FINAL MESSAGE</p>
-    <h1 class="glow">HAPPY BIRTHDAY</h1>
-    <h2>MY GUGGU 🎀</h2>
-    <div class="card">
-      <p>
-        1700 KM APART.
-        <br><br>
-        But somehow...
-        <br>
-        you still manage to be
-        one of the closest people to my heart.
-        <br><br>
-        Today is your day.
-        <br>
-        Smile a little more.
-        Laugh a little louder.
-        And remember...
-        <br><br>
-        <b>You are loved. ❤️</b>
-      </p>
-    </div>
-    <p style="margin-top:20px">
-      — SUJAL ❤️
-    </p>
-  </div>
-</section>
-<script>
-let currentScreen = 1;
-function showScreen(number){
-  document.querySelectorAll(".screen").forEach(screen=>{
-    screen.classList.remove("active");
-  });
-  document.getElementById("screen"+number).classList.add("active");
-  currentScreen = number;
-  window.scrollTo(0,0);
-  if(number === 7){
-    createHearts();
-  }
-}
-function startExperience(){
-  showScreen(2);
-  setInterval(createHeart,700);
-}
-function createHeart(){
-  const heart = document.createElement("div");
-  heart.className="heart";
-  const hearts=["❤️","💕","💗","💖","💘"];
-  heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.animationDuration=(4+Math.random()*3)+"s";
-  document.body.appendChild(heart);
-  setTimeout(()=>{
-    heart.remove();
-  },7000);
-}
-function createHearts(){
-  for(let i=0;i<20;i++){
-    setTimeout(()=>{
-      createHeart();
-    },i*150);
-  }
-}
-function memory(){
-  showScreen(4);
-}
-function secret(){
-  showScreen(5);
-}
-function letter(){
-  showScreen(8);
-}
-const questions=[
-{
-  q:"Who is the birthday girl? 👀",
-  a:["Guggu 🎀","Someone else","My neighbour","Nobody"],
-  correct:0
-},
-{
-  q:"Who is writing this entire thing?",
-  a:["Sujal ❤️","Google","Her cat","NASA"],
-  correct:0
-},
-{
-  q:"What's more important today?",
-  a:["Her happiness ❤️","Homework","Sleep","Nothing"],
-  correct:0
-},
-{
-  q:"What do I want most today?",
-  a:["To see her smile 🥹","A new phone","Pizza","Money"],
-  correct:0
-},
-{
-  q:"Final question...",
-  a:["Will you keep being my Guggu? ❤️","No","Maybe","Ask later"],
-  correct:0
-}
-];
-let questionIndex=0;
-let score=0;
-function quiz(){
-  questionIndex=0;
-  score=0;
-  showScreen(6);
-  loadQuestion();
-}
-function loadQuestion(){
-  if(questionIndex >= questions.length){
-    document.getElementById("question").innerHTML=
-      "QUIZ COMPLETE ❤️";
-    document.getElementById("answers").innerHTML=
-      `<div class="card">
-        <h2>${score}/${questions.length}</h2>
-        <p>
-        Congratulations Guggu 😂❤️
-        <br><br>
-        You have officially unlocked
-        the birthday experience.
+<!-- ================================================= -->
+
+<section
+    class="screen"
+    id="screen7">
+
+    <div class="content">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+
+        <p class="small">
+            FINAL MESSAGE
         </p>
-      </div>
-      <button onclick="showScreen(3)">CONTINUE →</button>`;
-    document.getElementById("progressBar").style.width="100%";
-    return;
-  }
-  const q=questions[questionIndex];
-  document.getElementById("question").innerText=q.q;
-  document.getElementById("quizResult").innerText="";
-  document.getElementById("progressBar").style.width=
-    ((questionIndex)/questions.length*100)+"%";
-  const answers=document.getElementById("answers");
-  answers.innerHTML="";
-  q.a.forEach((answer,index)=>{
-    const btn=document.createElement("button");
-    btn.className="option";
-    btn.innerText=answer;
-    btn.onclick=()=>{
-      if(index===q.correct){
-        score++;
-        document.getElementById("quizResult").innerText=
-          "Correct 😭❤️";
-      }else{
-        document.getElementById("quizResult").innerText=
-          "Wrong 😂 but I'll forgive you.";
-      }
-      questionIndex++;
-      setTimeout(loadQuestion,700);
-    };
-    answers.appendChild(btn);
-  });
+
+
+        <h1 class="glow">
+
+            HAPPY<br>
+            BIRTHDAY
+
+        </h1>
+
+
+        <h2>
+            MY GUGGU 🎀
+        </h2>
+
+
+        <div class="card">
+
+            <p>
+
+                1700 KM APART.
+
+                <br><br>
+
+                But somehow...
+
+                <br>
+
+                you still manage
+                to feel closer
+                than most people.
+
+                <br><br>
+
+                Today is your day.
+
+                <br><br>
+
+                Smile a little more.
+
+                <br>
+
+                Laugh a little louder.
+
+                <br>
+
+                Be happy.
+
+                <br><br>
+
+                And remember...
+
+                <br><br>
+
+                <b>
+                    You are loved. ❤️
+                </b>
+
+                <br><br>
+
+                Happy Birthday,
+                my Guggu.
+
+            </p>
+
+        </div>
+
+
+        <p style="margin-top:25px;">
+
+            — SUJAL ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+
+/* ---------------- SCREEN CONTROL ---------------- */
+
+function showScreen(number){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById("screen" + number)
+        .classList.add("active");
+
+
+    window.scrollTo(0,0);
+
+
+    if(number === 7){
+
+        createLotsOfHearts();
+
+    }
+
 }
+
+
+
+/* ---------------- START EXPERIENCE ---------------- */
+
+function startExperience(){
+
+    showScreen(2);
+
+    startMusic();
+
+    setInterval(createHeart,1000);
+
+}
+
+
+
+/* ---------------- MUSIC ---------------- */
+
+function startMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    music.volume = 0.45;
+
+
+    music.play()
+        .then(() => {
+
+            document
+                .getElementById("musicBtn")
+                .innerText = "🔊";
+
+        })
+        .catch(() => {
+
+            document
+                .getElementById("musicBtn")
+                .innerText = "🎵";
+
+        });
+
+}
+
+
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicBtn");
+
+
+    if(music.paused){
+
+        music.play();
+
+        button.innerText = "🔊";
+
+    }
+
+    else{
+
+        music.pause();
+
+        button.innerText = "🔇";
+
+    }
+
+}
+
+
+
+/* ---------------- HEARTS ---------------- */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className = "heart";
+
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💞"
+
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 3) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    },7000);
+
+}
+
+
+
+/* ---------------- FINAL HEART EFFECT ---------------- */
+
+function createLotsOfHearts(){
+
+    for(let i = 0; i < 40; i++){
+
+        setTimeout(() => {
+
+            createHeart();
+
+        }, i * 120);
+
+    }
+
+}
+
 </script>
+
+
 </body>
 </html>
